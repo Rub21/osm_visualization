@@ -2,8 +2,5 @@
 
 for i in {523..574}
 do
-	#http://planet.openstreetmap.org/replication/day/000/000/573.state.txt
-	#curl -O http://planet.openstreetmap.org/replication/day/000/000/$i.osc.gz
-	
 	./get-sf-edits $i.osc.gz > sf$i.geojson
 done
