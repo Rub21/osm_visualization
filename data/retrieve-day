@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for i in {574..577}
+do
+	#http://planet.openstreetmap.org/replication/day/000/000/573.state.txt
+	curl -O http://planet.openstreetmap.org/replication/day/000/000/$i.osc.gz
+done
