@@ -32,8 +32,6 @@ sub handle_start {
 	if ($element eq "way") {
 		$timestamp = $tags{'timestamp'};
 		$user = $tags{'user'};
-		if()
-		print STDERR  $user;
 		@nd = ();
 	}
 
@@ -43,7 +41,7 @@ sub handle_start {
 }
 
 sub handle_end {
-	my ($expat, $element) = @_;
+	my ($expat, $element,) = @_;
 
 	if ($element eq "way") {
 		@lat = ();
@@ -59,14 +57,17 @@ sub handle_end {
 			}
 		}
 		
+
 		for ($i = 0; $i < $#lat; $i++) {
 
 
 			if ($lat[$i] != 0 && $lat[$i + 1] != 0) {
 				#print "$lat[$i],$lon[$i] $lat[$i + 1],$lon[$i + 1] // $file $timestamp\n";
-				print "   {
+				print STDERR $user;
+				if($user eq "dbaron"){
+					print "   {
 			      \"type\": \"Feature\",
-			      \"properties\": {},
+			      \"properties\": {\"user\":\"$user\"},
 			      \"geometry\": {
 			        \"type\": \"LineString\",
 			        \"coordinates\": [
@@ -75,6 +76,8 @@ sub handle_end {
 			        ]
 			      }
 			    },";
+				}
+				
 			}
 		}
 		
