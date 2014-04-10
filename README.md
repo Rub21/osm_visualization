@@ -72,6 +72,8 @@ luego: ejecutar los siguintes comandos:
 	ruben@rub21:~/Documents/MapBox/export$ mogrify -format gif *.png && gifsicle *.gif > anim.gif
 	ruben@rub21:~/Documents/MapBox/export$ gifsicle --loop=0 --colors 256 *.gif > anim.gif
 
+fuente:
+http://www.lcdf.org/gifsicle/man.html
 Finalmente optenemos el la imagen animada:
 
 ![](https://cloud.githubusercontent.com/assets/1152236/2662166/48d7280c-c038-11e3-94fd-05002489803d.gif)
