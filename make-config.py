@@ -17,8 +17,8 @@ for x in range(int(argv[1]), int(argv[2])+1):
             "format": "png",
             "minzoom": 1,
             "maxzoom": 16,
-            "width":700,
-             "height":700,
+            "width":1068,
+            "height":1093,
             "mml": {
                     "Layer": [
                       {                                        
