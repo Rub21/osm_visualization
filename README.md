@@ -10,9 +10,11 @@ Run:
     $ ./retrieve-day arg1 arg2
 
 Donde:
+
 arg1 is: 01/09/2014 = 484 (start file)
 arg2 is: 04/09/2014 = 574 (end file)
-the Script is based in : https://github.com/ericfischer/ebola/blob/master/retrieve-hourly
+
+The Script is based in : https://github.com/ericfischer/ebola/blob/master/retrieve-hourly
 
 Example:
 
