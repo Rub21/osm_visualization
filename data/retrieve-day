@@ -1,5 +1,6 @@
 #!/bin/bash
-for i in { $1 .. $2 }
-do
+for i in $(seq $1 $2)
+do	
 	curl -O http://planet.openstreetmap.org/replication/day/000/000/$i.osc.gz
+	#echo http://planet.openstreetmap.org/replication/day/000/000/${i}.osc.gz
 done

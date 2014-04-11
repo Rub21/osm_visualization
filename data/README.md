@@ -1,52 +1,51 @@
-### Procesamiento de archivos 
+### Download the OSM files 
 Descargar Archivos de OSM de la mejoras diarias: http://planet.openstreetmap.org/replication/day/000/000/
 
-https://github.com/Rub21/osm_visualization/blob/master/data/retrieve-day
+https://github.com/Rub21/osm_osm_visualization/blob/master/data/retrieve-day
 
-ejecutar:
+Ejecutar:
 
+		$ ./retrieve-day arg1 arg2
 
-		ruben@rub21:~/Apps/visualization/data$ ./retrieve-day
+donde:
+arg1 is: 01/09/2014 = 484 (start file)
+arg2 is: 04/09/2014 = 574 (end file)
+script basado en: https://github.com/ericfischer/ebola/blob/master/retrieve-hourly
 
+		ruben@rub21:~/osm_visualization/data$ ./retrieve-day 448 574
 
-basado en: https://github.com/ericfischer/ebola/blob/master/retrieve-hourly
+### Convert datos to Geojson
 
-se tiene que configurar de fecha a que fecha se quiere:
+Se usa: https://github.com/Rub21/osm_osm_visualization/blob/master/data/get-sf-edits:
+modificado de: https://github.com/ericfischer/ebola/blob/master/get-mamou-edits
 
-por ejemplo:
+Ejecutar: 
 
-se quiere trabajar desde : 01/09/2014 a 04/09/2014 que corresponde a 484 a 574
+	$ ./get-sf-edits file minlat minlon maxlat maxlon > newfile.geojson
 
-
-una ves descargado todos los archivos para la visualizacion:
-
-se tiene que poner configurar el BBox del archivo, en este caso para San Francisco.
-https://github.com/Rub21/osm_visualization/blob/master/data/get-sf-edits
+Example:
+Bounds from San Francisco:
 
 		$minlat = 37.716045;
 		$minlon = -122.51781;
 		$maxlat = 37.817006;
 		$maxlon = -122.34924;
 
-
-que es para la creacion de de Gejson: modificado del archivo: https://github.com/ericfischer/ebola/blob/master/get-mamou-edits
-
-Se puede ejecutar para una solo archivo:
-
-		ruben@rub21:~/Apps/visualization/data$ ./get-sf-edits 485.osc.gz > sf485.geojson
-
-pero su se quiere se puede ejecutar todos los archivos 
-
-configurando la siguinete line con el nuemor de archivos que hay:
-https://github.com/Rub21/osm_visualization/blob/master/data/process_all#L3
-
- en mi caso modifico de 484 a 574, y ejecuto:
+Ejecuta para un archivo:
+		
+		ruben@rub21:~/osm_visualization/data$ ./get-edits 485.osc.gz 37.716045 -122.51781 37.817006 -122.34924 > sf485.geojson
 
 
-		ruben@rub21:~/Apps/visualization/data$ ./process_all
+Es posible ejecutar todos los archivos con una solo line de comando:
+
+	$ ./process_all start_file end_file minlat minlon maxlat maxlon
 
 
- tomara algunos minutos procesar todos los archivos, al final se tendra archivos en geojson
+Example: 
+
+	ruben@rub21:~/osm_visualization/data$ ./process_all 499 500 37.716045 -122.51781 37.817006 -122.34924 
+
+It will take a while depending on the number of files are.
 
 
 

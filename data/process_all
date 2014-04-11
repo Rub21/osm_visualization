@@ -1,6 +1,10 @@
 #!/bin/bash
+minlat=$3
+minlon=$4
+maxlat=$5
+maxlon=$6
 
-for i in {523..574}
+for i in {$1 .. $2} 
 do
-	./get-sf-edits $i.osc.gz > sf$i.geojson
+	./get-edits $i.osc.gz $minlat $minlon $maxlat $maxlon > sf$i.geojson
 done
