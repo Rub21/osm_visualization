@@ -103,15 +103,27 @@ We need to configure this file https://github.com/Rub21/osm_visualization/blob/m
                   }
         }
 
+
 Run:
 
+    $ python config.py arg1 arg2
+
+where:
+arg1: is the number of the first file  that we dowload before.
+arg2: is the number of the last file  that we dowload before.
+
+
+Example:
+
     ruben@rub21:~/visualization/projectmill$ python config.py 484 574
+
+and then execute:
 
    	ruben@rub21:~/Apps/visualization/projectmill$ ./index.js --mill  --render  -c config.json -f -t /usr/share/tilemill
 
 After:
 
-Tha files are created in: /home/ruben/Documents/MapBox/export.
+That files are created in: /home/ruben/Documents/MapBox/export.
 
 
 ### Created a GIF File
