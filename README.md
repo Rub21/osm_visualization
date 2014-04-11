@@ -9,10 +9,10 @@ Run:
 
     $ ./retrieve-day arg1 arg2
 
-Donde:
+Where:
 
-arg1 is: 01/09/2014 = 484 (start file)
-arg2 is: 04/09/2014 = 574 (end file)
+- arg1 is: 01/09/2014 = 484 (start file)
+- arg2 is: 04/09/2014 = 574 (end file)
 
 The Script is based in : https://github.com/ericfischer/ebola/blob/master/retrieve-hourly
 
@@ -27,8 +27,8 @@ modified from: https://github.com/ericfischer/ebola/blob/master/get-mamou-edits
 
 Run: 
 
-  $ ./get-edits file minlat minlon maxlat maxlon > newfile.geojson
-
+    $ ./get-edits file minlat minlon maxlat maxlon > newfile.geojson
+ 
 Example:
 Bounds from San Francisco:
 
@@ -48,14 +48,29 @@ Is possible to execute all the files:
 
 Run:
 
+  
   $ ./process_all start_file end_file minlat minlon maxlat maxlon
 
 
 Example: 
 
-  ruben@rub21:~/osm_visualization/data$ ./process_all 484 574 37.716045 -122.51781 37.817006 -122.34924 
+
+    ruben@rub21:~/osm_visualization/data$ ./process_all 484 574 37.716045 -122.51781 37.817006 -122.34924 
+
 
 It will take a while depending on the number of files are.
+
+If you want to process the file for some especific user use the file, you have to edit the file: https://github.com/Rub21/osm_visualization/blob/master/data/get-edits-by-users, 
+exactly  the line https://github.com/Rub21/osm_visualization/blob/master/data/get-edits-by-users#L64  and add more users, then 
+
+Run
+
+  $ ./get-edits file minlat minlon maxlat maxlon > newfile.geojson
+
+Example:
+
+    ruben@rub21:~/osm_visualization/data$ ./get-edits-by-users 499.osc.gz 37.716045 -122.51781 37.817006 -122.34924 > sf499-users.geojson
+
 
 ### Creating png files
 
@@ -132,25 +147,16 @@ That files are created in: /home/ruben/Documents/MapBox/export.
 
 Copy and paste the satelital imagen from folder  tile-stitch to /MapBox/export and renamed the file  a  smaller number of the first file that was created by Tilemill:
 
-Example:
 my first file is called: sf484.png, I renamed the imagen file to sf483.png and then run:
+
+
+Example:
 
 	ruben@rub21:~/Documents/MapBox/export$ mogrify -format gif *.png && gifsicle *.gif > anim.gif
 	ruben@rub21:~/Documents/MapBox/export$ gifsicle --loop=0 --colors 256 *.gif > anim.gif
 
-the result is:
+The result is:
 
 ![](https://cloud.githubusercontent.com/assets/1152236/2662166/48d7280c-c038-11e3-94fd-05002489803d.gif)
 
 Source for mae a gif: http://www.lcdf.org/gifsicle/man.html
-
-
-
-
-
-
-
-
-
-
-
