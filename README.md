@@ -49,7 +49,7 @@ Example:
 
 It will take a while depending on the number of files are.
 
- ### Creating png files
+### Creating png files
 
  You need to install [Tilemill](https://www.mapbox.com/tilemill), and  clone [Projectmill](https://github.com/mapbox/projectmill)
 
@@ -67,14 +67,15 @@ we use  ericfischer' project [tile-stitch](https://github.com/ericfischer/tile-s
 then we check the size of imagen: in my cas is :  "width":1068, "height":1093
 
 #### Create a project in Tilemill:
+
 I create a project in Tilemill called sfbuildings: https://github.com/Rub21/osm_visualization/tree/master/tilemill-project/sfbuildings
 
-#### Do a config.json file
-we nned to configure this file https://github.com/Rub21/osm_visualization/blob/master/make-config.py :
-the exact line is:
+#### Configuration in Projectmill
+
+We need to configure this file https://github.com/Rub21/osm_visualization/blob/master/make-config.py, the exact lines are:
 
     project={
-            "source": "sfbuildings",
+            "source": "sfbuildings", #name of projet in Tilemill
             "destination": "sf"+ str(x),
             "format": "png",
             "minzoom": 1,
@@ -85,7 +86,7 @@ the exact line is:
                     "Layer": [
                       {                                        
                                   "Datasource": {
-                                  "file": "/home/ruben/visualization/data/sf"+str(x)+".geojson"
+                                  "file": "/home/ruben/osm_visualization/data/sf"+str(x)+".geojson"  #directory of files for process
                                 }
                   
                       }
@@ -100,29 +101,32 @@ Run:
 
     ruben@rub21:~/visualization/projectmill$ python config.py 484 574
 
-
    	ruben@rub21:~/Apps/visualization/projectmill$ ./index.js --mill  --render  -c config.json -f -t /usr/share/tilemill
 
-se crearan lo archivos los proyectos en Tilemill y las imagenes en la carpeta export
+After:
 
-#### crear imagen Gif:
+Tha files are created in: /home/ruben/Documents/MapBox/export.
 
-para ejecutar el gif nombramos la imagen satelital con un numero menor del primer archivos que procesamos:
 
-	Ejemplo:
+### Created a GIF File
 
-		la primera imagen esprocesada del archivo procesado es: sf484.png , entonces renombrar la imagen satelital a sf483.png
+Copy and paste the satelital imagen from folder  tile-stitch to /MapBox/export and renamed the file  a  smaller number of the first file that was created by Tilemill:
 
-luego: ejecutar los siguintes comandos:
+Example:
+my first file is called: sf484.png, I renamed the imagen file to sf483.png and then run:
 
 	ruben@rub21:~/Documents/MapBox/export$ mogrify -format gif *.png && gifsicle *.gif > anim.gif
 	ruben@rub21:~/Documents/MapBox/export$ gifsicle --loop=0 --colors 256 *.gif > anim.gif
 
-fuente:
-http://www.lcdf.org/gifsicle/man.html
-Finalmente optenemos el la imagen animada:
+the result is:
 
 ![](https://cloud.githubusercontent.com/assets/1152236/2662166/48d7280c-c038-11e3-94fd-05002489803d.gif)
+
+fuente:
+http://www.lcdf.org/gifsicle/man.html
+
+
+
 
 
 
