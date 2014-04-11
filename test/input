@@ -1,0 +1,2 @@
+#! /bin/bash 
+echo It is a $1 day $2

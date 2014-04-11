@@ -1,8 +1,5 @@
 ### Procesamiento de archivos 
-Es posible descargar archivos de osm de las mejoras , por dia en :
-Descargar de http://planet.openstreetmap.org/replication/day/000/000/
-
-Pero para descargar mas rapido estos es bueno utilizar:
+Descargar Archivos de OSM de la mejoras diarias: http://planet.openstreetmap.org/replication/day/000/000/
 
 https://github.com/Rub21/osm_visualization/blob/master/data/retrieve-day
 
