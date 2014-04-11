@@ -5,10 +5,15 @@ use XML::Parser;
 
 #http://www.overpass-api.de/api/xapi?map?bbox=-122.51781,37.716045,-122.34924,37.817006
 #SF
-$minlat = 37.716045;
-$minlon = -122.51781;
-$maxlat = 37.817006;
-$maxlon = -122.34924;
+#$minlat = 37.716045;
+#$minlon = -122.51781;
+#$maxlat = 37.817006;
+#$maxlon = -122.34924;
+
+$minlat = $ARGV[1];
+$minlon = $ARGV[2];
+$maxlat = $ARGV[3];
+$maxlon = $ARGV[4];
 
 $head = "{\"type\": \"FeatureCollection\", \"features\": [ ";
 $body = "";
