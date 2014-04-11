@@ -67,13 +67,14 @@ we use  ericfischer' project [tile-stitch](https://github.com/ericfischer/tile-s
 then we check the size of imagen: in my cas is :  "width":1068, "height":1093
 
 #### Create a project in Tilemill:
+I create a project in Tilemill called sfbuildings: https://github.com/Rub21/osm_visualization/tree/master/tilemill-project/sfbuildings
 
 #### Do a config.json file
 we nned to configure this file https://github.com/Rub21/osm_visualization/blob/master/make-config.py :
 the exact line is:
 
     project={
-            "source": "sf",
+            "source": "sfbuildings",
             "destination": "sf"+ str(x),
             "format": "png",
             "minzoom": 1,
