@@ -3,9 +3,8 @@
 use POSIX;
 use XML::Parser;
 
-# http://b.tiles.mapbox.com/v3/brunosan.Mamou/11/955/964.png
 #http://www.overpass-api.de/api/xapi?map?bbox=-122.51781,37.716045,-122.34924,37.817006
-
+#SF
 $minlat = 37.716045;
 $minlon = -122.51781;
 $maxlat = 37.817006;
@@ -62,9 +61,7 @@ sub handle_end {
 
 
 			if ($lat[$i] != 0 && $lat[$i + 1] != 0) {
-				#print "$lat[$i],$lon[$i] $lat[$i + 1],$lon[$i + 1] // $file $timestamp\n";
-				print STDERR $user;
-				if($user eq "dbaron"){
+				if($user eq "ediyes" || $user eq "Rub21" || $user eq "Luis36995"){
 					print "   {
 			      \"type\": \"Feature\",
 			      \"properties\": {\"user\":\"$user\"},
@@ -84,12 +81,8 @@ sub handle_end {
 	}
 }
 
-
-
-#for $file (<*.osc.gz>) {
-
 	$n1=$ARGV[0];
-	#print STDERR $ARGV[0];
+	print STDERR "$ARGV[0]\n";
 	$parser = new XML::Parser(Handlers => { Start => \&handle_start, End => \&handle_end, });
 	print $head;
 	open(IN, "zcat $n1 |");
@@ -104,4 +97,4 @@ sub handle_end {
 			}";
 	print $foot;
 	close(IN);
-#}
+
