@@ -65,7 +65,7 @@ exactly  the line https://github.com/Rub21/osm_visualization/blob/master/data/ge
 
 Run
 
-  $ ./get-edits file minlat minlon maxlat maxlon > newfile.geojson
+    $ ./get-edits file minlat minlon maxlat maxlon > newfile.geojson
 
 Example:
 
