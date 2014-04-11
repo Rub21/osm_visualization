@@ -1,29 +1,31 @@
 osm_visualization
 =================
 ### Download the OSM files 
-Descargar Archivos de OSM de la mejoras diarias: http://planet.openstreetmap.org/replication/day/000/000/
+Download the daily improvement files in OSM from: http://planet.openstreetmap.org/replication/day/000/000/
 
 https://github.com/Rub21/osm_osm_visualization/blob/master/data/retrieve-day
 
-Ejecutar:
+Run:
 
     $ ./retrieve-day arg1 arg2
 
-donde:
+Donde:
 arg1 is: 01/09/2014 = 484 (start file)
 arg2 is: 04/09/2014 = 574 (end file)
-script basado en: https://github.com/ericfischer/ebola/blob/master/retrieve-hourly
+the Script is based in : https://github.com/ericfischer/ebola/blob/master/retrieve-hourly
+
+Example:
 
     ruben@rub21:~/osm_visualization/data$ ./retrieve-day 448 574
 
-### Convert datos to Geojson
+### Convert data to Geojson file
 
-Se usa: https://github.com/Rub21/osm_osm_visualization/blob/master/data/get-sf-edits:
-modificado de: https://github.com/ericfischer/ebola/blob/master/get-mamou-edits
+we use: https://github.com/Rub21/osm_osm_visualization/blob/master/data/get-edits:
+modified from: https://github.com/ericfischer/ebola/blob/master/get-mamou-edits
 
-Ejecutar: 
+Run: 
 
-  $ ./get-sf-edits file minlat minlon maxlat maxlon > newfile.geojson
+  $ ./get-edits file minlat minlon maxlat maxlon > newfile.geojson
 
 Example:
 Bounds from San Francisco:
@@ -33,12 +35,16 @@ Bounds from San Francisco:
     $maxlat = 37.817006;
     $maxlon = -122.34924;
 
-Ejecuta para un archivo:
+Process a file
     
+    Example: 
+
     ruben@rub21:~/osm_visualization/data$ ./get-edits 485.osc.gz 37.716045 -122.51781 37.817006 -122.34924 > sf485.geojson
 
 
-Es posible ejecutar todos los archivos con una solo line de comando:
+Is possible to execute all the files:
+
+Run:
 
   $ ./process_all start_file end_file minlat minlon maxlat maxlon
 
@@ -122,8 +128,7 @@ the result is:
 
 ![](https://cloud.githubusercontent.com/assets/1152236/2662166/48d7280c-c038-11e3-94fd-05002489803d.gif)
 
-fuente:
-http://www.lcdf.org/gifsicle/man.html
+Source for mae a gif: http://www.lcdf.org/gifsicle/man.html
 
 
 
