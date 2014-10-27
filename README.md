@@ -3,7 +3,7 @@ osm_visualization
 ### Download the OSM files 
 Download the daily improvement files in OSM from: http://planet.openstreetmap.org/replication/day/000/000/
 
-https://github.com/Rub21/osm_osm_visualization/blob/master/data/retrieve-day
+https://github.com/Rub21/osm_visualization/blob/master/data/retrieve-day
 
 Run:
 
