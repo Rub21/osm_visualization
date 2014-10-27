@@ -22,7 +22,7 @@ Example:
 
 ### Convert data to Geojson file
 
-we use: https://github.com/Rub21/osm_osm_visualization/blob/master/data/get-edits:
+we use: https://github.com/Rub21/osm_visualization/blob/master/data/get-edits:
 modified from: https://github.com/ericfischer/ebola/blob/master/get-mamou-edits
 
 Run: 
