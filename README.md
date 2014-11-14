@@ -3,7 +3,7 @@ osm_visualization
 ### Download the OSM files 
 Download the daily improvement files in OSM from: http://planet.openstreetmap.org/replication/day/000/000/
 
-https://github.com/Rub21/osm_osm_visualization/blob/master/data/retrieve-day
+https://github.com/Rub21/osm_visualization/blob/master/data/retrieve-day
 
 Run:
 
@@ -22,7 +22,7 @@ Example:
 
 ### Convert data to Geojson file
 
-we use: https://github.com/Rub21/osm_osm_visualization/blob/master/data/get-edits:
+we use: https://github.com/Rub21/osm_visualization/blob/master/data/get-edits:
 modified from: https://github.com/ericfischer/ebola/blob/master/get-mamou-edits
 
 Run: 
